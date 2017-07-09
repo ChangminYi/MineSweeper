@@ -1,6 +1,12 @@
 #include <stdio.h>
 #include <stdlib.h>
 
+typedef struct mine_status
+{
+	int num;
+	int peri;
+}mine;
+
 int* setting();
 
 void main()
@@ -23,13 +29,13 @@ int* setting()
 	scanf_s("%d", &row);
 
 	//memory allocating & initializing...
-	int **po_col = (int **)calloc(row, sizeof(int));
+	mine **po_col = (mine **)calloc(row, sizeof(mine));
 	for (int i = 0; i < row; i++)
 	{
-		po_col[i] = (int *)calloc(col, sizeof(int));
+		po_col[i] = (mine *)calloc(col, sizeof(mine));
 		for (int r = 0; r < col; r++)
 		{
-			po_col[i][r] = i*col + r + 1;
+			po_col[i][r].num = i*col + r + 1;
 		}
 	}
 
@@ -45,19 +51,17 @@ int* setting()
 	{
 		for (int m = 0; m < col; m++)
 		{
-			printf("%5d", po_col[n][m]);
+			printf("%5d", po_col[n][m].num);
 		}
 		printf("\n");
 	}
 
 	// mem-free... (not needed)
-	/*
 	for (int k = 0; k < row; k++)
 	{
 	free(po_col[k]);
 	}
 	free(po_col);
-	*/
 
 	return &po_col;
 }
