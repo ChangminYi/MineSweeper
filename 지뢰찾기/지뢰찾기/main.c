@@ -3,28 +3,32 @@
 
 typedef struct mine_status
 {
-	int num;
-	int peri;
+	unsigned int num;
+	unsigned short stat;
+	unsigned short peri;
 }mine;
 
-mine* setting();
-int check(mine* loc, int row, int col);
+mine** setting();
+int check(mine ** loc, int row, int col);
 
 int row = 0, col = 0;
+mine** memloc = NULL;
 
 void main()
 {
+	short ret = 0;
+
 	int mem = setting();
 	do
 	{
-		check(mem, row, col);
-	} while (check(mem, row, col) != 0);
+		ret = check(mem, row, col);
+	} while (ret != 0);
 
 	printf("\n\n");
 	system("pause");
 }
 
-mine* setting()
+mine** setting()
 {
 	//size confirming...
 	printf("난이도 선택\n");
@@ -49,7 +53,7 @@ mine* setting()
 	printf("각 열 주소:\n");
 	for (int j = 0; j < row; j++)
 	{
-		printf("\t%d\n", po_col[j]);
+		printf("\t%d: %d\n",j + 1, po_col[j]);
 	}
 	printf("\n\n");
 	for (int n = 0; n < row; n++)
@@ -68,10 +72,11 @@ mine* setting()
 	}
 	free(po_col);
 
-	return &po_col;
+	memloc = &po_col;
+	return memloc;
 }
 
-int check(mine* loc, int row, int col)
+int check(mine ** loc, int row, int col)
 {
 	for (int i = 0; i < col; i++)
 	{
