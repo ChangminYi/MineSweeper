@@ -4,6 +4,8 @@
 
 #define MINE 1
 #define NOT 0
+#define TRUE 1
+#define FALSE 0
 #define mine_plus arg[i][j].peri++;
 
 //Mine Structure
@@ -17,22 +19,30 @@ typedef struct mine_status
 
 //Functions
 mine ** setting();
-int mine_seed(mine ** arg, int row, int col);
-int mine_check(mine ** arg, int row, int col);
-int select(mine ** arg);
+int mine_seed(mine **arg, int row, int col);
+int mine_check(mine **arg, int row, int col);
+void first_select(mine **arg);
+int select(mine **arg);
 void screen(mine **arg);
 
 //Global Variables
 int row = 0, col = 0;
-mine** memloc = NULL;
 
 void main()
 {
-	setting();
+	//초기 설정
+	mine** memloc = setting();
+
 	mine_seed(memloc, row, col);
 	mine_check(memloc, row, col);
 
+	//게임 진행
 	screen(memloc);
+	first_select(memloc);
+	do
+	{
+		screen(memloc);
+	} while (select(memloc) == 1);
 
 	printf("\n\n");
 	system("pause");
@@ -50,18 +60,18 @@ mine ** setting()
 	scanf_s("%d", &col);
 
 	//memory allocating & initializing...
-	mine **po_col = (mine **)calloc(row, sizeof(mine *));
+	mine **col_p = (mine **)calloc(row, sizeof(mine *));
 	for (int i = 0; i < row; i++)
 	{
-		po_col[i] = (mine *)calloc(col, sizeof(mine));
+		col_p[i] = (mine *)calloc(col, sizeof(mine));
 		for (int r = 0; r < col; r++)
 		{
-			po_col[i][r].num = col*i + r + 1;
+			col_p[i][r].num = col*i + r + 1;
 		}
 	}
 
 	//recording memory location
-	memloc = po_col;
+	return col_p;
 }
 
 int mine_seed(mine ** argv, int row, int col)
@@ -155,20 +165,44 @@ int mine_seed(mine ** argv, int row, int col)
 
 int select(mine ** arg)
 {
-	return 0;
+	int open_row = 0, open_col = 0;
+
+	printf("열 칸 입력하세요(행): ");
+	scanf_s("%d", &open_row);
+	open_row--;
+	printf("열 행 입력하세요(열): ");
+	scanf_s("%d", &open_col);
+	open_col--;
+
+	if (arg[open_row][open_col].stat == MINE)
+	{
+		printf("You Lose!\n");
+		return 0;
+	}
+	else
+	{
+		arg[open_row][open_col].open = TRUE;
+		return 1;
+	}
 }
 
 void screen(mine ** arg)
 {
+	system("cls");
+
 	for (int i = 0; i < row; i++)
 	{
 		for (int j = 0; j < col; j++)
 		{
-			if (arg[i][j].stat == MINE)
+			if (arg[i][j].open == TRUE && arg[i][j].peri != 0)
 			{
-				printf("    X");
+				printf("    %d", arg[i][j].peri);
 			}
-			else
+			if (arg[i][j].open == TRUE && arg[i][j].peri == 0)
+			{
+				printf("     ");
+			}
+			else if (arg[i][j].open == FALSE)
 			{
 				printf("    O");
 			}
@@ -375,4 +409,27 @@ int mine_check(mine ** arg, int row, int col)
 		}
 	}
 	return 0;
+}
+
+void first_select(mine ** arg)
+{
+	int open_row = 0, open_col = 0;
+
+	printf("열 칸 입력하세요(행): ");
+	scanf_s("%d", &open_row);
+	open_row--;
+	printf("열 행 입력하세요(열): ");
+	scanf_s("%d", &open_col);
+	open_col--;
+
+	if (arg[open_row][open_col].stat == MINE)
+	{
+		do
+		{
+			mine_seed(arg, row, col);
+			mine_check(arg, row, col);
+		} while (arg[open_row][open_col].stat == MINE);
+	}
+
+	arg[open_row][open_col].open = TRUE;
 }
