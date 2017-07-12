@@ -9,7 +9,7 @@ typedef struct mine_status
 }mine;
 
 mine** setting();
-int check(mine ** loc, int row, int col);
+int check(mine ** loc, int row, int col);N
 
 int row = 0, col = 0;
 mine** memloc = NULL;
