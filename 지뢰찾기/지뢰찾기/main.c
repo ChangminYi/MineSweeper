@@ -1,6 +1,8 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <time.h>
 
+//Mine Structure
 typedef struct mine_status
 {
 	unsigned int num;
@@ -8,9 +10,11 @@ typedef struct mine_status
 	unsigned short peri;
 }mine;
 
-mine** setting();
-int check(mine ** loc, int row, int col);N
+//Functions
+int setting();
+int check(mine ** loc, int row, int col);
 
+//Global Variables
 int row = 0, col = 0;
 mine** memloc = NULL;
 
@@ -26,9 +30,11 @@ void main()
 
 	printf("\n\n");
 	system("pause");
+
+	return;
 }
 
-mine** setting()
+int setting()
 {
 	//size confirming...
 	printf("난이도 선택\n");
@@ -38,7 +44,7 @@ mine** setting()
 	scanf_s("%d", &row);
 
 	//memory allocating & initializing...
-	mine **po_col = (mine **)calloc(row, sizeof(mine));
+	mine **po_col = (mine **)calloc(row, sizeof(mine *));
 	for (int i = 0; i < row; i++)
 	{
 		po_col[i] = (mine *)calloc(col, sizeof(mine));

@@ -1,9 +1,9 @@
 ﻿  main.c
-d:\visual studio 2017\지뢰찾기\지뢰찾기\main.c(24): warning C4047: '함수': 'mine **'의 간접 참조 수준이 'int'과(와) 다릅니다.
-d:\visual studio 2017\지뢰찾기\지뢰찾기\main.c(24): warning C4024: 'check': 형식 및 실제 매개 변수 1의 형식이 서로 다릅니다.
-d:\visual studio 2017\지뢰찾기\지뢰찾기\main.c(21): warning C4047: '초기화 중': 'int'의 간접 참조 수준이 'mine **'과(와) 다릅니다.
-d:\visual studio 2017\지뢰찾기\지뢰찾기\main.c(75): warning C4047: '=': 'mine **'의 간접 참조 수준이 'mine ***'과(와) 다릅니다.
-d:\visual studio 2017\지뢰찾기\지뢰찾기\main.c(52): warning C4477: 'printf' : 서식 문자열 '%d'에 'int' 형식의 인수가 필요하지만 variadic 인수 1의 형식이 'mine ***'입니다.
-d:\visual studio 2017\지뢰찾기\지뢰찾기\main.c(56): warning C4477: 'printf' : 서식 문자열 '%d'에 'int' 형식의 인수가 필요하지만 variadic 인수 2의 형식이 'mine *'입니다.
+d:\visual studio 2017\지뢰찾기\지뢰찾기\main.c(28): warning C4047: '함수': 'mine **'의 간접 참조 수준이 'int'과(와) 다릅니다.
+d:\visual studio 2017\지뢰찾기\지뢰찾기\main.c(28): warning C4024: 'check': 형식 및 실제 매개 변수 1의 형식이 서로 다릅니다.
+d:\visual studio 2017\지뢰찾기\지뢰찾기\main.c(81): warning C4047: '=': 'mine **'의 간접 참조 수준이 'mine ***'과(와) 다릅니다.
+d:\visual studio 2017\지뢰찾기\지뢰찾기\main.c(82): warning C4047: 'return': 'int'의 간접 참조 수준이 'mine **'과(와) 다릅니다.
+d:\visual studio 2017\지뢰찾기\지뢰찾기\main.c(58): warning C4477: 'printf' : 서식 문자열 '%d'에 'int' 형식의 인수가 필요하지만 variadic 인수 1의 형식이 'mine ***'입니다.
+d:\visual studio 2017\지뢰찾기\지뢰찾기\main.c(62): warning C4477: 'printf' : 서식 문자열 '%d'에 'int' 형식의 인수가 필요하지만 variadic 인수 2의 형식이 'mine *'입니다.
   지뢰찾기.vcxproj -> D:\Visual Studio 2017\지뢰찾기\Debug\지뢰찾기.exe
   지뢰찾기.vcxproj -> D:\Visual Studio 2017\지뢰찾기\Debug\지뢰찾기.pdb (Partial PDB)
