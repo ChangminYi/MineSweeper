@@ -17,10 +17,12 @@ typedef struct mine_status
 
 int winlose(mine **arg, int row, int col);
 
+int count = 0;
+
 int winlose(mine **arg, int row, int col)
 {
 	extern mi_size;
-	int count = 0;
+
 
 	if (arg[row][col].stat == MINE)
 	{
@@ -37,7 +39,6 @@ int winlose(mine **arg, int row, int col)
 	else if (arg[row][col].stat != MINE)
 	{
 		arg[row][col].open = TRUE;
-		count++;
 
 		return 1;
 	}

@@ -54,6 +54,8 @@ int first_select(mine ** arg)
 		scanf_s("%d", &open_col);
 		open_col--;
 
+		select_mine(arg, open_row, open_col);
+
 		return 1;
 	}
 }

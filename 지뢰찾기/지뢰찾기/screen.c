@@ -42,11 +42,11 @@ void screen(mine ** arg)
 			{
 				printf("%5c", open);
 			}
-			else if (arg[i][j].open == FALSE && arg[i][j].stat == MINE_SEL)
+			else if (arg[i][j].open == FALSE && arg[i][j].sel == MINE_SEL)
 			{
 				printf("%5c", mine_checked);
 			}
-			else if (arg[i][j].open == FALSE)
+			else if (arg[i][j].open == FALSE && arg[i][j].sel == FALSE)
 			{
 				printf("%5c", close);
 			}

@@ -58,21 +58,27 @@ int select(mine ** arg)
 
 int select_mine(mine **arg, int row, int col)
 {
-	if (arg[row][col].peri != 0)
-	{
-		arg[row][col].stat == MINE_SEL;
-	}
-	else if (arg[row][col].stat = FALSE && arg[row][col].peri != 0)
-	{
-		arg[row][col].sel == NOT_SEL;
-	}
-	else if (arg[row][col].stat == MINE_SEL && arg[row][col].peri != 0)
-	{
-		arg[row][col].stat == MINE;
-	}
-	else if (arg[row][col].open== TRUE && arg[row][col].peri == 0)
+	extern count;
+
+	if (arg[row][col].open == TRUE)
 	{
 		printf("이미 열린 칸입니다.");
+	}
+	else if (arg[row][col].open == FALSE && arg[row][col].sel == FALSE)
+	{
+		arg[row][col].sel = MINE_SEL;
+		if (arg[row][col].stat == MINE)
+		{
+			count++;
+		}
+	}
+	else if (arg[row][col].open == FALSE && arg[row][col].sel == MINE_SEL)
+	{
+		arg[row][col].sel = FALSE;
+		if (arg[row][col].stat == MINE);
+		{
+			count--;
+		}
 	}
 
 	return 1;
