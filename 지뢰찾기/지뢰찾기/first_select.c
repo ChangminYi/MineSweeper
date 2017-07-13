@@ -1,7 +1,6 @@
 //첫번째 실행에서 지뢰 나오지 않도록 설정하는 함수
 
 #include <stdio.h>
-#include <stdlib.h>
 
 #define MINE 1
 #define TRUE 1
@@ -13,6 +12,7 @@ typedef struct mine_status
 	int stat;
 	int peri;
 	int open;
+	int sel;
 }mine;
 
 int first_select(mine ** arg);

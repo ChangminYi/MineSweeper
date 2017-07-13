@@ -6,6 +6,7 @@
 #define MINE 1
 #define NOT 0
 #define mine_plus arg[i][j].peri++;
+#define NOT_SEL 0;
 
 typedef struct mine_status
 {
@@ -13,6 +14,7 @@ typedef struct mine_status
 	int stat;
 	int peri;
 	int open;
+	int sel;
 }mine;
 
 mine ** setting();
@@ -38,6 +40,8 @@ mine ** setting()
 		for (int r = 0; r < col; r++)
 		{
 			col_p[i][r].num = col*i + r + 1;
+			col_p[i][r].sel = NOT_SEL;
+			col_p[i][r].open = NOT;
 		}
 	}
 

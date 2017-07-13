@@ -1,12 +1,12 @@
 //Áö·Ú Ã¼Å© È¤Àº ºóÄ­ Ã¼Å©ÇÏ´Â ÇÔ¼ö
 
 #include <stdio.h>
-#include <stdlib.h>
 
 #define MINE 1
 #define TRUE 1
 #define FALSE 0
 #define MINE_SEL 2
+#define NOT_SEL 0
 
 typedef struct mine_status
 {
@@ -14,6 +14,7 @@ typedef struct mine_status
 	int stat;
 	int peri;
 	int open;
+	int sel;
 }mine;
 
 int select(mine ** arg);
@@ -57,9 +58,13 @@ int select(mine ** arg)
 
 int select_mine(mine **arg, int row, int col)
 {
-	if (arg[row][col].stat == MINE && arg[row][col].peri != 0)
+	if (arg[row][col].peri != 0)
 	{
-		arg[row][col].stat = MINE_SEL;
+		arg[row][col].stat == MINE_SEL;
+	}
+	else if (arg[row][col].stat = FALSE && arg[row][col].peri != 0)
+	{
+		arg[row][col].sel == NOT_SEL;
 	}
 	else if (arg[row][col].stat == MINE_SEL && arg[row][col].peri != 0)
 	{

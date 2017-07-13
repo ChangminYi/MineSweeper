@@ -1,5 +1,6 @@
+//main 함수
+
 #include <stdio.h>
-#include <stdlib.h>
 
 //지뢰 구조체
 typedef struct mine_status
@@ -8,6 +9,7 @@ typedef struct mine_status
 	int stat;
 	int peri;
 	int open;
+	int sel;
 }mine;
 
 //전역변수 (행, 열)
