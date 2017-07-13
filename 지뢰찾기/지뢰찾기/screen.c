@@ -20,8 +20,7 @@ void screen(mine ** arg);
 
 void screen(mine ** arg)
 {
-	extern row;
-	extern col;
+	extern row, col;
 
 	//Ãâ·Â¿ë char
 	unsigned char close = 'O';

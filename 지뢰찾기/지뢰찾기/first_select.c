@@ -41,7 +41,9 @@ int first_select(mine ** arg)
 		scanf_s("%d", &open_col);
 		open_col--;
 
-		return first_select_vo(arg, open_row, open_col);
+		first_select_vo(arg, open_row, open_col);
+
+		return 1;
 	}
 	else if (sel == 'Y' || sel == 'y')	//Áö·Ú
 	{

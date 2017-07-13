@@ -21,8 +21,7 @@ int mine_check(mine ** arg, int row, int col);
 
 mine ** setting()
 {
-	extern row;
-	extern col;
+	extern row, col;
 
 	//지뢰찾기 판 크기 설정
 	printf("난이도 선택\n");
@@ -49,7 +48,7 @@ mine ** setting()
 int mine_seed(mine ** argv, int row, int col)
 {
 	//지뢰 갯수
-	int mi_size = 0;
+	extern mi_size;
 
 	//지뢰 갯수 설정
 	int *mine = NULL;

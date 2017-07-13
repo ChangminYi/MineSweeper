@@ -27,9 +27,9 @@ int select(mine ** arg)
 	int open_row = 0, open_col = 0;
 
 	//Áö·Ú ¼±ÅÃ or ºóÄ­ ¼±ÅÃ
-	printf("Áö·Ú ¼±ÅÃ(Y) / ºóÄ­ ¼±ÅÃ(N)");
+	printf("Áö·Ú ¼±ÅÃ(Y) / ºóÄ­ ¼±ÅÃ(N): ");
 	scanf_s("%c", &sel, 1);
-	if (sel == 'N' || sel == "n")	//ºóÄ­
+	if (sel == 'N' || sel == 'n')	//ºóÄ­
 	{
 		printf("¼±ÅÃÇÒ Ä­ ÀÔ·ÂÇÏ¼¼¿ä(Çà): ");
 		scanf_s("%d", &open_row);
@@ -38,7 +38,8 @@ int select(mine ** arg)
 		scanf_s("%d", &open_col);
 		open_col--;
 
-		return winlose(arg, open_row, open_col);
+		int temp = winlose(arg, open_row, open_col);
+		return temp;
 	}
 	else if (sel == 'Y' || sel == 'y')	//Áö·Ú
 	{
@@ -49,7 +50,8 @@ int select(mine ** arg)
 		scanf_s("%d", &open_col);
 		open_col--;
 
-		return select_mine(arg, open_row, open_col);
+		int temp = select_mine(arg, open_row, open_col);
+		return temp;
 	}
 }
 
