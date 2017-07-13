@@ -1,0 +1,25 @@
+﻿  mine_set.c
+mine_set.c(48): warning C4013: 'time'이(가) 정의되지 않았습니다. extern은 int형을 반환하는 것으로 간주합니다.
+mine_set.c(56): warning C4311: '형식 캐스팅': 'void *'에서 'int'(으)로 포인터가 잘립니다.
+mine_set.c(56): warning C4047: '=': 'int *'의 간접 참조 수준이 'int'과(와) 다릅니다.
+mine_set.c(61): warning C4311: '형식 캐스팅': 'void *'에서 'int'(으)로 포인터가 잘립니다.
+mine_set.c(61): warning C4047: '=': 'int *'의 간접 참조 수준이 'int'과(와) 다릅니다.
+mine_set.c(66): warning C4311: '형식 캐스팅': 'void *'에서 'int'(으)로 포인터가 잘립니다.
+mine_set.c(66): warning C4047: '=': 'int *'의 간접 참조 수준이 'int'과(와) 다릅니다.
+mine_set.c(71): warning C4311: '형식 캐스팅': 'void *'에서 'int'(으)로 포인터가 잘립니다.
+mine_set.c(71): warning C4047: '=': 'int *'의 간접 참조 수준이 'int'과(와) 다릅니다.
+mine_set.c(76): warning C4311: '형식 캐스팅': 'void *'에서 'int'(으)로 포인터가 잘립니다.
+mine_set.c(76): warning C4047: '=': 'int *'의 간접 참조 수준이 'int'과(와) 다릅니다.
+  main.c
+main.c(19): warning C4013: 'setting'이(가) 정의되지 않았습니다. extern은 int형을 반환하는 것으로 간주합니다.
+main.c(21): warning C4013: 'mine_seed'이(가) 정의되지 않았습니다. extern은 int형을 반환하는 것으로 간주합니다.
+main.c(22): warning C4013: 'mine_check'이(가) 정의되지 않았습니다. extern은 int형을 반환하는 것으로 간주합니다.
+main.c(25): warning C4013: 'screen'이(가) 정의되지 않았습니다. extern은 int형을 반환하는 것으로 간주합니다.
+main.c(26): warning C4013: 'first_select'이(가) 정의되지 않았습니다. extern은 int형을 반환하는 것으로 간주합니다.
+main.c(30): warning C4013: 'select'이(가) 정의되지 않았습니다. extern은 int형을 반환하는 것으로 간주합니다.
+main.c(19): warning C4047: '초기화 중': 'mine **'의 간접 참조 수준이 'int'과(와) 다릅니다.
+  output.c
+output.c(36): warning C4013: 'mine_seed'이(가) 정의되지 않았습니다. extern은 int형을 반환하는 것으로 간주합니다.
+output.c(37): warning C4013: 'mine_check'이(가) 정의되지 않았습니다. extern은 int형을 반환하는 것으로 간주합니다.
+output.c(71): error C2065: 'row': 선언되지 않은 식별자입니다.
+output.c(73): error C2065: 'col': 선언되지 않은 식별자입니다.

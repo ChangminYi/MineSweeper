@@ -18,5 +18,20 @@
     <ClCompile Include="main.c">
       <Filter>소스 파일</Filter>
     </ClCompile>
+    <ClCompile Include="mine_set.c">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="first_select.c">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="screen.c">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="select.c">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="win_lose.c">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>

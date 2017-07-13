@@ -111,7 +111,12 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="first_select.c" />
+    <ClCompile Include="mine_set.c" />
     <ClCompile Include="main.c" />
+    <ClCompile Include="select.c" />
+    <ClCompile Include="screen.c" />
+    <ClCompile Include="win_lose.c" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
