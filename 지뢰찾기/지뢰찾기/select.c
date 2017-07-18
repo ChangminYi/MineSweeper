@@ -28,8 +28,11 @@ int select(mine ** arg)
 	int open_row = 0, open_col = 0;
 
 	//지뢰 선택 or 빈칸 선택
+	label:
+	fflush(stdin);
 	printf("지뢰 선택(Y) / 빈칸 선택(N): ");
 	scanf_s("%c", &sel, 1);
+
 	if (sel == 'N' || sel == 'n')	//빈칸
 	{
 		printf("선택할 칸 입력하세요(행): ");
@@ -54,6 +57,10 @@ int select(mine ** arg)
 		int temp = select_mine(arg, open_row, open_col);
 		return temp;
 	}
+	else
+	{
+		goto label;
+	}
 }
 
 int select_mine(mine **arg, int row, int col)
@@ -62,7 +69,8 @@ int select_mine(mine **arg, int row, int col)
 
 	if (arg[row][col].open == TRUE)
 	{
-		printf("이미 열린 칸입니다.");
+		printf("이미 열린 칸입니다.\n");
+		system("pause");
 	}
 	else if (arg[row][col].open == FALSE && arg[row][col].sel == FALSE)
 	{

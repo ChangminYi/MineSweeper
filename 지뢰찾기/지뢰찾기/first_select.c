@@ -28,7 +28,6 @@ int first_select(mine ** arg)
 	int open_row = 0, open_col = 0;
 
 	//Áö·Ú ¼±ÅÃ or ºóÄ­ ¼±ÅÃ
-	fflush(stdin);
 	printf("Áö·Ú ¼±ÅÃ(Y) / ºóÄ­ ¼±ÅÃ(N): ");
 	scanf_s("%c", &sel, 1);
 

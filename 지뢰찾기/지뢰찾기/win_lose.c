@@ -23,16 +23,9 @@ int winlose(mine **arg, int row, int col)
 {
 	extern mi_size;
 
-
 	if (arg[row][col].stat == MINE)
 	{
 		printf("You Lose!\n");
-
-		return 0;
-	}
-	else if (count == mi_size)
-	{
-		printf("You Win!\n");
 
 		return 0;
 	}
@@ -41,5 +34,11 @@ int winlose(mine **arg, int row, int col)
 		arg[row][col].open = TRUE;
 
 		return 1;
+	}
+	else if (count == mi_size)
+	{
+		printf("You Win!\n");
+
+		return 0;
 	}
 }

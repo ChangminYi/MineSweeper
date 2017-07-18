@@ -30,25 +30,32 @@ void screen(mine ** arg)
 
 	system("cls");
 
+	printf("%4c", ' ');
+	for (int i = 0; i < col; i++)
+	{
+		printf("%4d", i + 1);
+	}
+	printf("\n\n");
 	for (int i = 0; i < row; i++)
 	{
+		printf("%4d", i + 1);
 		for (int j = 0; j < col; j++)
 		{
 			if (arg[i][j].open == TRUE && arg[i][j].peri != 0)
 			{
-				printf("%5d", arg[i][j].peri);
+				printf("%4d", arg[i][j].peri);
 			}
 			else if (arg[i][j].open == TRUE && arg[i][j].peri == 0)
 			{
-				printf("%5c", open);
+				printf("%4c", open);
 			}
 			else if (arg[i][j].open == FALSE && arg[i][j].sel == MINE_SEL)
 			{
-				printf("%5c", mine_checked);
+				printf("%4c", mine_checked);
 			}
 			else if (arg[i][j].open == FALSE && arg[i][j].sel == FALSE)
 			{
-				printf("%5c", close);
+				printf("%4c", close);
 			}
 		}
 		printf("\n\n");
