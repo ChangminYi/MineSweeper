@@ -101,7 +101,7 @@ void select_inv(mine ** arg)
 	extern row, col;
 	int count;
 
-	for (int k=0; k<row*col; k++)
+	for (int k = 0; k < row*col; k++)
 	{
 		count = 0;
 

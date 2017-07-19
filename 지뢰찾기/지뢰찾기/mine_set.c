@@ -33,7 +33,7 @@ ret:
 	printf("1. 초급(9x9, 지뢰 10개)\n");
 	printf("2. 중급(16x16, 지뢰 40개)\n");
 	printf("3. 상급(30x16, 지뢰 85개)\n");
-	printf("4. 사용자 지정\n");
+	printf("4. 사용자 지정\n>> ");
 	scanf_s("%d", &level);
 
 	switch (level)
