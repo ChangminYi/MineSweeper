@@ -30,15 +30,22 @@ void screen(mine ** arg)
 
 	system("cls");
 
-	printf("%4c", ' ');
+	printf("%4c%4c", ' ', ' ');
 	for (int i = 0; i < col; i++)
 	{
 		printf("%4d", i + 1);
+	}
+	printf("\n");
+	printf("%4c%4c", ' ', ' ');
+	for (int i = 0; i < col; i++)
+	{
+		printf("%4c", '_');
 	}
 	printf("\n\n");
 	for (int i = 0; i < row; i++)
 	{
 		printf("%4d", i + 1);
+		printf("%4c", '|');
 		for (int j = 0; j < col; j++)
 		{
 			if (arg[i][j].open == TRUE && arg[i][j].peri != 0)

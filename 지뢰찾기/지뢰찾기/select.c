@@ -31,7 +31,7 @@ int select(mine ** arg)
 	label:
 	fflush(stdin);
 	printf("Áö·Ú ¼±ÅÃ(Y) / ºóÄ­ ¼±ÅÃ(N): ");
-	scanf_s("%c", &sel, 1);
+	scanf_s(" %c", &sel, 1);
 
 	if (sel == 'N' || sel == 'n')	//ºóÄ­
 	{
@@ -59,6 +59,7 @@ int select(mine ** arg)
 	}
 	else
 	{
+		screen(arg);
 		goto label;
 	}
 }

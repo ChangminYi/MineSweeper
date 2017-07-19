@@ -1,9 +1,8 @@
-﻿  select.c
-select.c(45): warning C4013: 'winlose'이(가) 정의되지 않았습니다. extern은 int형을 반환하는 것으로 간주합니다.
-select.c(73): warning C4013: 'system'이(가) 정의되지 않았습니다. extern은 int형을 반환하는 것으로 간주합니다.
+﻿  screen.c
+screen.c(31): warning C4013: 'system'이(가) 정의되지 않았습니다. extern은 int형을 반환하는 것으로 간주합니다.
   코드를 생성하고 있습니다.
-  2 of 16 functions (12.5%) were compiled, the rest were copied from previous compilation.
+  1 of 16 functions ( 6.3%) were compiled, the rest were copied from previous compilation.
     0 functions were new in current compilation
-    0 functions had inline decision re-evaluated but remain unchanged
+    2 functions had inline decision re-evaluated but remain unchanged
   코드를 생성했습니다.
   지뢰찾기.vcxproj -> D:\Visual Studio 2017\지뢰찾기\Release\지뢰찾기.exe
