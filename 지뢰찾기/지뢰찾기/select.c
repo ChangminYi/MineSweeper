@@ -101,7 +101,7 @@ void select_inv(mine ** arg)
 	extern row, col;
 	int count;
 
-	do
+	for (int k=0; k<row*col; k++)
 	{
 		count = 0;
 
@@ -109,7 +109,7 @@ void select_inv(mine ** arg)
 		{
 			for (int j = 0; j < col; j++)
 			{
-				if (i = 0 && j == 0)
+				if (i == 0 && j == 0)
 				{
 					if (arg[i][j].stat == MINE)
 					{
@@ -134,7 +134,7 @@ void select_inv(mine ** arg)
 						}
 					}
 				}
-				else if (i == 1 && j == col)
+				else if (i == 0 && j == col - 1)
 				{
 					if (arg[i][j].stat == MINE)
 					{
@@ -159,7 +159,7 @@ void select_inv(mine ** arg)
 						}
 					}
 				}
-				else if (i == row && col == 1)
+				else if (i == row - 1 && j == 0)
 				{
 					if (arg[i][j].stat == MINE)
 					{
@@ -184,7 +184,7 @@ void select_inv(mine ** arg)
 						}
 					}
 				}
-				else if (i == row && j == col)
+				else if (i == row - 1 && j == col - 1)
 				{
 					if (arg[i][j].stat == MINE)
 					{
@@ -209,7 +209,7 @@ void select_inv(mine ** arg)
 						}
 					}
 				}
-				else if (i == 1)
+				else if (i == 0)
 				{
 					if (arg[i][j].stat == MINE)
 					{
@@ -244,7 +244,7 @@ void select_inv(mine ** arg)
 						}
 					}
 				}
-				else if (i == row)
+				else if (i == row - 1)
 				{
 					if (arg[i][j].stat == MINE)
 					{
@@ -279,7 +279,7 @@ void select_inv(mine ** arg)
 						}
 					}
 				}
-				else if (j == 1)
+				else if (j == 0)
 				{
 					if (arg[i][j].stat == MINE)
 					{
@@ -314,7 +314,7 @@ void select_inv(mine ** arg)
 						}
 					}
 				}
-				else if (j == col)
+				else if (j == col - 1)
 				{
 					if (arg[i][j].stat == MINE)
 					{
@@ -401,5 +401,5 @@ void select_inv(mine ** arg)
 				}
 			}
 		}
-	} while (count != 0);
+	}
 }

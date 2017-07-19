@@ -41,6 +41,7 @@ int first_select(mine ** arg)
 		open_col--;
 
 		first_select_vo(arg, open_row, open_col);
+		select_inv(arg);
 
 		return 1;
 	}
