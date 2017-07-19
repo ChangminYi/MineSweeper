@@ -19,6 +19,7 @@ typedef struct mine_status
 
 int select(mine ** arg);
 int select_mine(mine **arg, int row, int col);
+void select_inv(mine **arg);
 
 int select(mine ** arg)
 {
@@ -27,41 +28,42 @@ int select(mine ** arg)
 	//선택한 칸
 	int open_row = 0, open_col = 0;
 
-	//지뢰 선택 or 빈칸 선택
-	label:
+//지뢰 선택 or 빈칸 선택
+label:
 	fflush(stdin);
 	printf("지뢰 선택(Y) / 빈칸 선택(N): ");
 	scanf_s(" %c", &sel, 1);
 
-	if (sel == 'N' || sel == 'n')	//빈칸
-	{
-		printf("선택할 칸 입력하세요(행): ");
-		scanf_s("%d", &open_row);
-		open_row--;
-		printf("선택할 행 입력하세요(열): ");
-		scanf_s("%d", &open_col);
-		open_col--;
+if (sel == 'N' || sel == 'n')	//빈칸
+{
+	printf("선택할 칸 입력하세요(행): ");
+	scanf_s("%d", &open_row);
+	open_row--;
+	printf("선택할 행 입력하세요(열): ");
+	scanf_s("%d", &open_col);
+	open_col--;
 
-		int temp = winlose(arg, open_row, open_col);
-		return temp;
-	}
-	else if (sel == 'Y' || sel == 'y')	//지뢰
-	{
-		printf("선택할 칸 입력하세요(행): ");
-		scanf_s("%d", &open_row);
-		open_row--;
-		printf("선택할 행 입력하세요(열): ");
-		scanf_s("%d", &open_col);
-		open_col--;
+	int temp = winlose(arg, open_row, open_col);
+	select_inv(arg);
+	return temp;
+}
+else if (sel == 'Y' || sel == 'y')	//지뢰
+{
+	printf("선택할 칸 입력하세요(행): ");
+	scanf_s("%d", &open_row);
+	open_row--;
+	printf("선택할 행 입력하세요(열): ");
+	scanf_s("%d", &open_col);
+	open_col--;
 
-		int temp = select_mine(arg, open_row, open_col);
-		return temp;
-	}
-	else
-	{
-		screen(arg);
-		goto label;
-	}
+	int temp = select_mine(arg, open_row, open_col);
+	return temp;
+}
+else
+{
+	screen(arg);
+	goto label;
+}
 }
 
 int select_mine(mine **arg, int row, int col)
@@ -91,4 +93,313 @@ int select_mine(mine **arg, int row, int col)
 	}
 
 	return 1;
+}
+
+void select_inv(mine ** arg)
+{
+	//판 크기 받아옴
+	extern row, col;
+	int count;
+
+	do
+	{
+		count = 0;
+
+		for (int i = 0; i < row; i++)
+		{
+			for (int j = 0; j < col; j++)
+			{
+				if (i = 0 && j == 0)
+				{
+					if (arg[i][j].stat == MINE)
+					{
+						continue;
+					}
+					else if (arg[i][j].open == TRUE && arg[i][j].peri == 0)
+					{
+						if (arg[i][j + 1].open != TRUE && arg[i][j + 1].peri == 0)
+						{
+							arg[i][j + 1].open = TRUE;
+							count++;
+						}
+						if (arg[i + 1][j + 1].open != TRUE && arg[i + 1][j + 1].peri == 0)
+						{
+							arg[i + 1][j + 1].open = TRUE;
+							count++;
+						}
+						if (arg[i + 1][j].open != TRUE && arg[i + 1][j].peri == 0)
+						{
+							arg[i + 1][j].open = TRUE;
+							count++;
+						}
+					}
+				}
+				else if (i == 1 && j == col)
+				{
+					if (arg[i][j].stat == MINE)
+					{
+						continue;
+					}
+					else if (arg[i][j].open == TRUE && arg[i][j].peri == 0)
+					{
+						if (arg[i + 1][j].open != TRUE && arg[i + 1][j].peri == 0)
+						{
+							arg[i + 1][j].open = TRUE;
+							count++;
+						}
+						if (arg[i + 1][j - 1].open != TRUE && arg[i + 1][j - 1].peri == 0)
+						{
+							arg[i + 1][j - 1].open = TRUE;
+							count++;
+						}
+						if (arg[i][j - 1].open != TRUE && arg[i][j - 1].peri == 0)
+						{
+							arg[i][j - 1].open = TRUE;
+							count++;
+						}
+					}
+				}
+				else if (i == row && col == 1)
+				{
+					if (arg[i][j].stat == MINE)
+					{
+						continue;
+					}
+					else if (arg[i][j].open == TRUE && arg[i][j].peri == 0)
+					{
+						if (arg[i - 1][j].open != TRUE && arg[i - 1][j].peri == 0)
+						{
+							arg[i - 1][j].open = TRUE;
+							count++;
+						}
+						if (arg[i - 1][j + 1].open != TRUE && arg[i - 1][j + 1].peri == 0)
+						{
+							arg[i - 1][j + 1].open = TRUE;
+							count++;
+						}
+						if (arg[i][j + 1].open != TRUE && arg[i][j + 1].peri == 0)
+						{
+							arg[i][j + 1].open = TRUE;
+							count++;
+						}
+					}
+				}
+				else if (i == row && j == col)
+				{
+					if (arg[i][j].stat == MINE)
+					{
+						continue;
+					}
+					else if (arg[i][j].open == TRUE && arg[i][j].peri == 0)
+					{
+						if (arg[i][j - 1].open != TRUE && arg[i][j - 1].peri == 0)
+						{
+							arg[i][j - 1].open = TRUE;
+							count++;
+						}
+						if (arg[i - 1][j - 1].open != TRUE && arg[i - 1][j - 1].peri == 0)
+						{
+							arg[i - 1][j - 1].open = TRUE;
+							count++;
+						}
+						if (arg[i - 1][j].open != TRUE && arg[i - 1][j].peri == 0)
+						{
+							arg[i - 1][j].open = TRUE;
+							count++;
+						}
+					}
+				}
+				else if (i == 1)
+				{
+					if (arg[i][j].stat == MINE)
+					{
+						continue;
+					}
+					else if (arg[i][j].open == TRUE && arg[i][j].peri == 0)
+					{
+						if (arg[i][j + 1].open != TRUE && arg[i][j + 1].peri == 0)
+						{
+							arg[i][j + 1].open = TRUE;
+							count++;
+						}
+						if (arg[i + 1][j + 1].open != TRUE && arg[i + i][j + i].peri == 0)
+						{
+							arg[i + 1][j + 1].open = TRUE;
+							count++;
+						}
+						if (arg[i + 1][j].open != TRUE && arg[i + 1][j].peri == 0)
+						{
+							arg[i + 1][j].open = TRUE;
+							count++;
+						}
+						if (arg[i + 1][j - 1].open != TRUE && arg[i + 1][j - 1].peri == 0)
+						{
+							arg[i + 1][j - 1].open = TRUE;
+							count++;
+						}
+						if (arg[i][j - 1].open != TRUE && arg[i][j - 1].peri == 0)
+						{
+							arg[i][j - 1].open = TRUE;
+							count++;
+						}
+					}
+				}
+				else if (i == row)
+				{
+					if (arg[i][j].stat == MINE)
+					{
+						continue;
+					}
+					else if (arg[i][j].open == TRUE && arg[i][j].peri == 0)
+					{
+						if (arg[i][j - 1].open != TRUE && arg[i][j - 1].peri == 0)
+						{
+							arg[i][j - 1].open = TRUE;
+							count++;
+						}
+						if (arg[i - 1][j - 1].open != TRUE && arg[i - 1][j - 1].peri == 0)
+						{
+							arg[i - 1][j - 1].open = TRUE;
+							count++;
+						}
+						if (arg[i - 1][j].open != TRUE && arg[i - 1][j].peri == 0)
+						{
+							arg[i - 1][j].open = TRUE;
+							count++;
+						}
+						if (arg[i - 1][j + i].open != TRUE && arg[i - 1][j + 1].peri == 0)
+						{
+							arg[i - 1][j + 1].open = TRUE;
+							count++;
+						}
+						if (arg[i][j + 1].open != TRUE && arg[i][j + 1].peri == 0)
+						{
+							arg[i][j + 1].open = TRUE;
+							count++;
+						}
+					}
+				}
+				else if (j == 1)
+				{
+					if (arg[i][j].stat == MINE)
+					{
+						continue;
+					}
+					else if (arg[i][j].open == TRUE && arg[i][j].peri == 0)
+					{
+						if (arg[i - 1][j].open != TRUE && arg[i - 1][j].peri == 0)
+						{
+							arg[i - 1][j].open = TRUE;
+							count++;
+						}
+						if (arg[i - 1][j + 1].open != TRUE && arg[i - 1][j + 1].peri == 0)
+						{
+							arg[i - 1][j + 1].open = TRUE;
+							count++;
+						}
+						if (arg[i][j + 1].open != TRUE && arg[i][j + 1].peri == 0)
+						{
+							arg[i][j + 1].open = TRUE;
+							count++;
+						}
+						if (arg[i + 1][j + 1].open != TRUE && arg[i + i][j + 1].peri == 0)
+						{
+							arg[i + 1][j + 1].open = TRUE;
+							count++;
+						}
+						if (arg[i + 1][j].open != TRUE && arg[i + 1][j].peri == 0)
+						{
+							arg[i + 1][j].open = TRUE;
+							count++;
+						}
+					}
+				}
+				else if (j == col)
+				{
+					if (arg[i][j].stat == MINE)
+					{
+						continue;
+					}
+					else if (arg[i][j].open == TRUE && arg[i][j].peri == 0)
+					{
+						if (arg[i - 1][j].open != TRUE && arg[i - 1][j].peri == 0)
+						{
+							arg[i - 1][j].open = TRUE;
+							count++;
+						}
+						if (arg[i - 1][j - 1].open != TRUE && arg[i - 1][j - 1].peri == 0)
+						{
+							arg[i - 1][j - 1].open = TRUE;
+							count++;
+						}
+						if (arg[i][j - 1].open != TRUE && arg[i][j - 1].peri == 0)
+						{
+							arg[i][j - 1].open = TRUE;
+							count++;
+						}
+						if (arg[i + 1][j - 1].open != TRUE && arg[i + 1][j - 1].peri == 0)
+						{
+							arg[i + 1][j - 1].open = TRUE;
+							count++;
+						}
+						if (arg[i + 1][j].open != TRUE && arg[i + 1][j].peri == 0)
+						{
+							arg[i + 1][j].open = TRUE;
+							count++;
+						}
+					}
+				}
+				else
+				{
+					if (arg[i][j].stat == MINE)
+					{
+						continue;
+					}
+					else if (arg[i][j].open == TRUE && arg[i][j].peri == 0)
+					{
+						if (arg[i - 1][j].open != TRUE && arg[i - 1][j].peri == 0)
+						{
+							arg[i - 1][j].open = TRUE;
+							count++;
+						}
+						if (arg[i - 1][j + 1].open != TRUE && arg[i - 1][j + 1].peri == 0)
+						{
+							arg[i - 1][j + 1].open = TRUE;
+							count++;
+						}
+						if (arg[i][j + 1].open != TRUE && arg[i][j + 1].peri == 0)
+						{
+							arg[i][j + 1].open = TRUE;
+							count++;
+						}
+						if (arg[i + 1][j + 1].open != TRUE && arg[i + 1][j + 1].peri == 0)
+						{
+							arg[i + 1][j + 1].open = TRUE;
+							count++;
+						}
+						if (arg[i + 1][j].open != TRUE && arg[i + 1][j].peri == 0)
+						{
+							arg[i + 1][j].open = TRUE;
+							count++;
+						}
+						if (arg[i + 1][j - 1].open != TRUE && arg[i + 1][j - 1].peri == 0)
+						{
+							arg[i + 1][j - 1].open = TRUE;
+							count++;
+						}
+						if (arg[i][j - 1].open != TRUE && arg[i][j - 1].peri == 0)
+						{
+							arg[i][j - 1].open = TRUE;
+							count++;
+						}
+						if (arg[i - 1][j - 1].open != TRUE && arg[i - 1][j - 1].peri == 0)
+						{
+							arg[i - 1][j - 1].open = TRUE;
+							count++;
+						}
+					}
+				}
+			}
+		}
+	} while (count != 0);
 }

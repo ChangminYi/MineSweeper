@@ -29,7 +29,7 @@ int first_select(mine ** arg)
 
 	//Áö·Ú ¼±ÅÃ or ºóÄ­ ¼±ÅÃ
 	printf("Áö·Ú ¼±ÅÃ(Y) / ºóÄ­ ¼±ÅÃ(N): ");
-	scanf_s("%c", &sel, 1);
+	scanf_s(" %c", &sel, 1);
 
 	if (sel == 'N' || sel == 'n')	//ºóÄ­
 	{

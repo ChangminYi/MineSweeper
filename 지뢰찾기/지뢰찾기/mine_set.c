@@ -23,15 +23,49 @@ int mine_check(mine ** arg, int row, int col);
 
 mine ** setting()
 {
-	extern row, col;
+	extern row, col, mi_size;
+	int level = 0;
 
 	//지뢰찾기 판 크기 설정
+ret:
+	system("cls");
 	printf("난이도 선택\n");
-	printf("가로줄 갯수: ");
-	scanf_s("%d", &row);
-	printf("세로줄 갯수: ");
-	scanf_s("%d", &col);
+	printf("1. 초급(9x9, 지뢰 10개)\n");
+	printf("2. 중급(16x16, 지뢰 40개)\n");
+	printf("3. 상급(30x16, 지뢰 85개)\n");
+	printf("4. 사용자 지정\n");
+	scanf_s("%d", &level);
 
+	switch (level)
+	{
+	case 1:
+		row = 9;
+		col = 9;
+		mi_size = 10;
+		break;
+	case 2:
+		row = 16;
+		col = 16;
+		mi_size = 40;
+		break;
+	case 3:
+		row = 16;
+		col = 30;
+		mi_size = 85;
+		break;
+	case 4:
+		printf("가로줄 개수: ");
+		scanf_s("%d", &row);
+		printf("세로줄 개수: ");
+		scanf_s("%d", &col);
+		printf("지뢰 개수: ");
+		scanf_s("%d", &mi_size);
+		break;
+	default:
+		goto ret;
+		break;
+	}
+	
 	//메모리 할당 + mine.num 초기화
 	mine **col_p = (mine **)calloc(row, sizeof(mine *));
 	for (int i = 0; i < row; i++)
@@ -54,34 +88,8 @@ int mine_seed(mine ** argv, int row, int col)
 	//지뢰 갯수
 	extern mi_size;
 
-	//지뢰 갯수 설정
-	int *mine = NULL;
-
-	if (row*col <= 30)
-	{
-		mine = (int)calloc(8, sizeof(int));
-		mi_size = 7;
-	}
-	else if (row*col <= 60)
-	{
-		mine = (int)calloc(15, sizeof(int));
-		mi_size = 12;
-	}
-	else if (row*col <= 120)
-	{
-		mine = (int)calloc(25, sizeof(int));
-		mi_size = 20;
-	}
-	else if (row*col <= 180)
-	{
-		mine = (int)calloc(50, sizeof(int));
-		mi_size = 40;
-	}
-	else
-	{
-		mine = (int)calloc(75, sizeof(int));
-		mi_size = 60;
-	}
+	//지뢰 갯수 설정 위한 배열
+	int *mine = (int *)calloc(mi_size, sizeof(int));
 
 	//지뢰 설정될 칸 난수함수로 설정
 	srand((unsigned)time(NULL));
@@ -89,7 +97,6 @@ int mine_seed(mine ** argv, int row, int col)
 	{
 		mine[i] = rand() % (row*col - 1) + 1;
 	}
-
 
 	//중복숫자 체킹 + 다시 뽑기
 	int temp = 0;
@@ -129,6 +136,7 @@ int mine_seed(mine ** argv, int row, int col)
 				else
 				{
 					argv[i][j].stat = NOT;
+					break;
 				}
 			}
 		}
