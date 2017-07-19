@@ -98,13 +98,6 @@ int mine_seed(mine ** argv, int row, int col)
 		mine[i] = rand() % (row*col - 1) + 1;
 	}
 
-	//체크용
-	printf("초기 난수\n");
-	for (int i = 0; i < mi_size; i++)
-	{
-		printf("%d ", mine[i]);
-	}
-
 	//중복숫자 체킹 + 다시 뽑기
 	int temp = 0;
 
@@ -127,12 +120,6 @@ int mine_seed(mine ** argv, int row, int col)
 			}
 		}
 	}
-	//체크용
-	printf("중복 체크 후 난수\n");
-	for (int i = 0; i < mi_size; i++)
-	{
-		printf("%d ", mine[i]);
-	}
 
 	//mine.stat에 적용
 	for (int i = 0; i < row; i++)
@@ -149,19 +136,6 @@ int mine_seed(mine ** argv, int row, int col)
 			}
 		}
 	}
-	//체크용
-	printf("구조체에 적용 후\n");
-	for (int i = 0; i < row; i++)
-	{
-		for (int j = 0; j < col; j++)
-		{
-			if (argv[i][j].stat == MINE)
-			{
-				printf("%d ", argv[i][j].num);
-			}
-		}
-	}
-	system("pause");
 
 	//메모리 반환
 	free(mine);

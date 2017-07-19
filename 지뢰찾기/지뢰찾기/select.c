@@ -99,12 +99,9 @@ void select_inv(mine ** arg)
 {
 	//판 크기 받아옴
 	extern row, col;
-	int count;
 
 	for (int k = 0; k < row*col; k++)
 	{
-		count = 0;
-
 		for (int i = 0; i < row; i++)
 		{
 			for (int j = 0; j < col; j++)
@@ -117,20 +114,17 @@ void select_inv(mine ** arg)
 					}
 					else if (arg[i][j].open == TRUE && arg[i][j].peri == 0)
 					{
-						if (arg[i][j + 1].open != TRUE && arg[i][j + 1].peri == 0)
+						if (arg[i][j + 1].open == FALSE)
 						{
 							arg[i][j + 1].open = TRUE;
-							count++;
 						}
-						if (arg[i + 1][j + 1].open != TRUE && arg[i + 1][j + 1].peri == 0)
+						if (arg[i + 1][j + 1].open == FALSE)
 						{
 							arg[i + 1][j + 1].open = TRUE;
-							count++;
 						}
-						if (arg[i + 1][j].open != TRUE && arg[i + 1][j].peri == 0)
+						if (arg[i + 1][j].open == FALSE)
 						{
 							arg[i + 1][j].open = TRUE;
-							count++;
 						}
 					}
 				}
@@ -142,20 +136,17 @@ void select_inv(mine ** arg)
 					}
 					else if (arg[i][j].open == TRUE && arg[i][j].peri == 0)
 					{
-						if (arg[i + 1][j].open != TRUE && arg[i + 1][j].peri == 0)
+						if (arg[i + 1][j].open == FALSE)
 						{
 							arg[i + 1][j].open = TRUE;
-							count++;
 						}
-						if (arg[i + 1][j - 1].open != TRUE && arg[i + 1][j - 1].peri == 0)
+						if (arg[i + 1][j - 1].open == FALSE)
 						{
 							arg[i + 1][j - 1].open = TRUE;
-							count++;
 						}
-						if (arg[i][j - 1].open != TRUE && arg[i][j - 1].peri == 0)
+						if (arg[i][j - 1].open == FALSE)
 						{
 							arg[i][j - 1].open = TRUE;
-							count++;
 						}
 					}
 				}
@@ -167,20 +158,17 @@ void select_inv(mine ** arg)
 					}
 					else if (arg[i][j].open == TRUE && arg[i][j].peri == 0)
 					{
-						if (arg[i - 1][j].open != TRUE && arg[i - 1][j].peri == 0)
+						if (arg[i - 1][j].open == FALSE)
 						{
 							arg[i - 1][j].open = TRUE;
-							count++;
 						}
-						if (arg[i - 1][j + 1].open != TRUE && arg[i - 1][j + 1].peri == 0)
+						if (arg[i - 1][j + 1].open == FALSE)
 						{
 							arg[i - 1][j + 1].open = TRUE;
-							count++;
 						}
-						if (arg[i][j + 1].open != TRUE && arg[i][j + 1].peri == 0)
+						if (arg[i][j + 1].open == FALSE)
 						{
 							arg[i][j + 1].open = TRUE;
-							count++;
 						}
 					}
 				}
@@ -192,20 +180,17 @@ void select_inv(mine ** arg)
 					}
 					else if (arg[i][j].open == TRUE && arg[i][j].peri == 0)
 					{
-						if (arg[i][j - 1].open != TRUE && arg[i][j - 1].peri == 0)
+						if (arg[i][j - 1].open == FALSE)
 						{
 							arg[i][j - 1].open = TRUE;
-							count++;
 						}
-						if (arg[i - 1][j - 1].open != TRUE && arg[i - 1][j - 1].peri == 0)
+						if (arg[i - 1][j - 1].open == FALSE)
 						{
 							arg[i - 1][j - 1].open = TRUE;
-							count++;
 						}
-						if (arg[i - 1][j].open != TRUE && arg[i - 1][j].peri == 0)
+						if (arg[i - 1][j].open == FALSE)
 						{
 							arg[i - 1][j].open = TRUE;
-							count++;
 						}
 					}
 				}
@@ -217,30 +202,25 @@ void select_inv(mine ** arg)
 					}
 					else if (arg[i][j].open == TRUE && arg[i][j].peri == 0)
 					{
-						if (arg[i][j + 1].open != TRUE && arg[i][j + 1].peri == 0)
+						if (arg[i][j + 1].open == FALSE)
 						{
 							arg[i][j + 1].open = TRUE;
-							count++;
 						}
-						if (arg[i + 1][j + 1].open != TRUE && arg[i + i][j + i].peri == 0)
+						if (arg[i + 1][j + 1].open == FALSE)
 						{
 							arg[i + 1][j + 1].open = TRUE;
-							count++;
 						}
-						if (arg[i + 1][j].open != TRUE && arg[i + 1][j].peri == 0)
+						if (arg[i + 1][j].open == FALSE)
 						{
 							arg[i + 1][j].open = TRUE;
-							count++;
 						}
-						if (arg[i + 1][j - 1].open != TRUE && arg[i + 1][j - 1].peri == 0)
+						if (arg[i + 1][j - 1].open == FALSE)
 						{
 							arg[i + 1][j - 1].open = TRUE;
-							count++;
 						}
-						if (arg[i][j - 1].open != TRUE && arg[i][j - 1].peri == 0)
+						if (arg[i][j - 1].open == FALSE)
 						{
 							arg[i][j - 1].open = TRUE;
-							count++;
 						}
 					}
 				}
@@ -252,30 +232,25 @@ void select_inv(mine ** arg)
 					}
 					else if (arg[i][j].open == TRUE && arg[i][j].peri == 0)
 					{
-						if (arg[i][j - 1].open != TRUE && arg[i][j - 1].peri == 0)
+						if (arg[i][j - 1].open == FALSE)
 						{
 							arg[i][j - 1].open = TRUE;
-							count++;
 						}
-						if (arg[i - 1][j - 1].open != TRUE && arg[i - 1][j - 1].peri == 0)
+						if (arg[i - 1][j - 1].open == FALSE)
 						{
 							arg[i - 1][j - 1].open = TRUE;
-							count++;
 						}
-						if (arg[i - 1][j].open != TRUE && arg[i - 1][j].peri == 0)
+						if (arg[i - 1][j].open == FALSE)
 						{
 							arg[i - 1][j].open = TRUE;
-							count++;
 						}
-						if (arg[i - 1][j + i].open != TRUE && arg[i - 1][j + 1].peri == 0)
+						if (arg[i - 1][j + i].open == FALSE)
 						{
 							arg[i - 1][j + 1].open = TRUE;
-							count++;
 						}
-						if (arg[i][j + 1].open != TRUE && arg[i][j + 1].peri == 0)
+						if (arg[i][j + 1].open == FALSE)
 						{
 							arg[i][j + 1].open = TRUE;
-							count++;
 						}
 					}
 				}
@@ -287,30 +262,25 @@ void select_inv(mine ** arg)
 					}
 					else if (arg[i][j].open == TRUE && arg[i][j].peri == 0)
 					{
-						if (arg[i - 1][j].open != TRUE && arg[i - 1][j].peri == 0)
+						if (arg[i - 1][j].open == FALSE)
 						{
 							arg[i - 1][j].open = TRUE;
-							count++;
 						}
-						if (arg[i - 1][j + 1].open != TRUE && arg[i - 1][j + 1].peri == 0)
+						if (arg[i - 1][j + 1].open == FALSE)
 						{
 							arg[i - 1][j + 1].open = TRUE;
-							count++;
 						}
-						if (arg[i][j + 1].open != TRUE && arg[i][j + 1].peri == 0)
+						if (arg[i][j + 1].open == FALSE)
 						{
 							arg[i][j + 1].open = TRUE;
-							count++;
 						}
-						if (arg[i + 1][j + 1].open != TRUE && arg[i + i][j + 1].peri == 0)
+						if (arg[i + 1][j + 1].open == FALSE)
 						{
 							arg[i + 1][j + 1].open = TRUE;
-							count++;
 						}
-						if (arg[i + 1][j].open != TRUE && arg[i + 1][j].peri == 0)
+						if (arg[i + 1][j].open == FALSE)
 						{
 							arg[i + 1][j].open = TRUE;
-							count++;
 						}
 					}
 				}
@@ -322,30 +292,25 @@ void select_inv(mine ** arg)
 					}
 					else if (arg[i][j].open == TRUE && arg[i][j].peri == 0)
 					{
-						if (arg[i - 1][j].open != TRUE && arg[i - 1][j].peri == 0)
+						if (arg[i - 1][j].open == FALSE)
 						{
 							arg[i - 1][j].open = TRUE;
-							count++;
 						}
-						if (arg[i - 1][j - 1].open != TRUE && arg[i - 1][j - 1].peri == 0)
+						if (arg[i - 1][j - 1].open == FALSE)
 						{
 							arg[i - 1][j - 1].open = TRUE;
-							count++;
 						}
-						if (arg[i][j - 1].open != TRUE && arg[i][j - 1].peri == 0)
+						if (arg[i][j - 1].open == FALSE)
 						{
 							arg[i][j - 1].open = TRUE;
-							count++;
 						}
-						if (arg[i + 1][j - 1].open != TRUE && arg[i + 1][j - 1].peri == 0)
+						if (arg[i + 1][j - 1].open == FALSE)
 						{
 							arg[i + 1][j - 1].open = TRUE;
-							count++;
 						}
-						if (arg[i + 1][j].open != TRUE && arg[i + 1][j].peri == 0)
+						if (arg[i + 1][j].open == FALSE)
 						{
 							arg[i + 1][j].open = TRUE;
-							count++;
 						}
 					}
 				}
@@ -357,45 +322,37 @@ void select_inv(mine ** arg)
 					}
 					else if (arg[i][j].open == TRUE && arg[i][j].peri == 0)
 					{
-						if (arg[i - 1][j].open != TRUE && arg[i - 1][j].peri == 0)
+						if (arg[i - 1][j].open == FALSE)
 						{
 							arg[i - 1][j].open = TRUE;
-							count++;
 						}
-						if (arg[i - 1][j + 1].open != TRUE && arg[i - 1][j + 1].peri == 0)
+						if (arg[i - 1][j + 1].open == FALSE)
 						{
 							arg[i - 1][j + 1].open = TRUE;
-							count++;
 						}
-						if (arg[i][j + 1].open != TRUE && arg[i][j + 1].peri == 0)
+						if (arg[i][j + 1].open == FALSE)
 						{
 							arg[i][j + 1].open = TRUE;
-							count++;
 						}
-						if (arg[i + 1][j + 1].open != TRUE && arg[i + 1][j + 1].peri == 0)
+						if (arg[i + 1][j + 1].open == FALSE)
 						{
 							arg[i + 1][j + 1].open = TRUE;
-							count++;
 						}
-						if (arg[i + 1][j].open != TRUE && arg[i + 1][j].peri == 0)
+						if (arg[i + 1][j].open == FALSE)
 						{
 							arg[i + 1][j].open = TRUE;
-							count++;
 						}
-						if (arg[i + 1][j - 1].open != TRUE && arg[i + 1][j - 1].peri == 0)
+						if (arg[i + 1][j - 1].open == FALSE)
 						{
 							arg[i + 1][j - 1].open = TRUE;
-							count++;
 						}
-						if (arg[i][j - 1].open != TRUE && arg[i][j - 1].peri == 0)
+						if (arg[i][j - 1].open == FALSE)
 						{
 							arg[i][j - 1].open = TRUE;
-							count++;
 						}
-						if (arg[i - 1][j - 1].open != TRUE && arg[i - 1][j - 1].peri == 0)
+						if (arg[i - 1][j - 1].open == FALSE)
 						{
 							arg[i - 1][j - 1].open = TRUE;
-							count++;
 						}
 					}
 				}
