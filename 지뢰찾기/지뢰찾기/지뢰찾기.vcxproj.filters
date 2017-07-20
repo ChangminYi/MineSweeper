@@ -30,7 +30,7 @@
     <ClCompile Include="select.c">
       <Filter>소스 파일</Filter>
     </ClCompile>
-    <ClCompile Include="win_lose.c">
+    <ClCompile Include="winlose.c">
       <Filter>소스 파일</Filter>
     </ClCompile>
   </ItemGroup>

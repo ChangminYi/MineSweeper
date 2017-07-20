@@ -17,13 +17,20 @@ typedef struct mine_status
 
 int winlose(mine **arg, int row, int col);
 
-int count = 0;
-
 int winlose(mine **arg, int row, int col)
 {
-	extern mi_size;
+	extern mi_size, count;
+	int all_mine = mi_size;
+	int mi_sltd = count;
 
-	if (arg[row][col].stat == MINE)
+	if (mi_sltd == all_mine)
+	{
+		screen(arg);
+		printf("You Win!\n");
+
+		return 0;
+	}
+	else if (arg[row][col].stat == MINE)
 	{
 		printf("You Lose!\n");
 
@@ -35,10 +42,5 @@ int winlose(mine **arg, int row, int col)
 
 		return 1;
 	}
-	else if (count == mi_size)
-	{
-		printf("You Win!\n");
-
-		return 0;
-	}
+	
 }
