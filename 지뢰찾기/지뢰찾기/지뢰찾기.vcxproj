@@ -114,6 +114,7 @@
     <ClCompile Include="first_select.c" />
     <ClCompile Include="mine_set.c" />
     <ClCompile Include="main.c" />
+    <ClCompile Include="mouse.c" />
     <ClCompile Include="select.c" />
     <ClCompile Include="screen.c" />
     <ClCompile Include="winlose.c" />
