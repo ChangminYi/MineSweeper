@@ -21,6 +21,8 @@ void screen(mine ** arg);
 void screen(mine ** arg)
 {
 	extern row, col;
+	extern mouse_x, mouse_y;
+
 
 	//Ãâ·Â¿ë char
 	unsigned char close = 'O';
@@ -67,4 +69,5 @@ void screen(mine ** arg)
 		}
 		printf("\n\n");
 	}
-}
+	printf("Mouse\nX: %d, Y: %d\n", mouse_x, mouse_y);
+}		

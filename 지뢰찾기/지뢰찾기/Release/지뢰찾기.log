@@ -1,7 +1,17 @@
-﻿  mouse.c
+﻿  main.c
+main.c(22): warning C4013: 'setting'이(가) 정의되지 않았습니다. extern은 int형을 반환하는 것으로 간주합니다.
+main.c(24): warning C4013: 'mine_seed'이(가) 정의되지 않았습니다. extern은 int형을 반환하는 것으로 간주합니다.
+main.c(25): warning C4013: 'mine_check'이(가) 정의되지 않았습니다. extern은 int형을 반환하는 것으로 간주합니다.
+main.c(28): warning C4013: 'screen'이(가) 정의되지 않았습니다. extern은 int형을 반환하는 것으로 간주합니다.
+main.c(29): warning C4013: 'first_select'이(가) 정의되지 않았습니다. extern은 int형을 반환하는 것으로 간주합니다.
+main.c(33): warning C4013: 'select'이(가) 정의되지 않았습니다. extern은 int형을 반환하는 것으로 간주합니다.
+main.c(36): warning C4013: 'system'이(가) 정의되지 않았습니다. extern은 int형을 반환하는 것으로 간주합니다.
+main.c(22): warning C4047: '초기화 중': 'mine **'의 간접 참조 수준이 'int'과(와) 다릅니다.
+  mouse.c
+mouse.c(15): warning C4013: 'main'이(가) 정의되지 않았습니다. extern은 int형을 반환하는 것으로 간주합니다.
   코드를 생성하고 있습니다.
-  0 of 17 functions ( 0.0%) were compiled, the rest were copied from previous compilation.
+  2 of 17 functions (11.8%) were compiled, the rest were copied from previous compilation.
     0 functions were new in current compilation
-    0 functions had inline decision re-evaluated but remain unchanged
+    2 functions had inline decision re-evaluated but remain unchanged
   코드를 생성했습니다.
   지뢰찾기.vcxproj -> D:\Visual Studio 2017\지뢰찾기\Release\지뢰찾기.exe
