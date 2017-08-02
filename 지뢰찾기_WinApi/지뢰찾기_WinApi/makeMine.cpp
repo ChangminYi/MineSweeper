@@ -2,13 +2,9 @@
 
 #define mine_plus pMine[i][j].Periphery++;
 
-mine** makeMine(int);
-void pushMine(int);
-void peripheral();
-
 int row, col;
 int mineNum;
-extern mine** pMine = NULL;
+mine** pMine = NULL;
 
 mine** makeMine(int diff)
 {

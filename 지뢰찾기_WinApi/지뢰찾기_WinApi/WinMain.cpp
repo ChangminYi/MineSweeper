@@ -1,7 +1,13 @@
 #include <Windows.h>
 #include "base.h"
 
+#define FIRST 0
+#define DETERMINED 1;
+#define REDRAWED 2;
+
 mine** MemLocation = NULL;
+
+int game_status = 0;
 
 HINSTANCE g_hInst;
 LRESULT CALLBACK WndProc(HWND, UINT, WPARAM, LPARAM);
@@ -79,6 +85,7 @@ LRESULT CALLBACK WndProc(HWND hWnd, UINT uMsg, WPARAM wParam, LPARAM lParam)
 					if (MemLocation != NULL)
 					{
 						MessageBox(hWnd, "초급 선택, 실행 성공", "난이도 테스트", MB_OK);
+						game_status = DETERMINED;
 					}
 					else
 					{
@@ -92,6 +99,7 @@ LRESULT CALLBACK WndProc(HWND hWnd, UINT uMsg, WPARAM wParam, LPARAM lParam)
 					if (MemLocation != NULL)
 					{
 						MessageBox(hWnd, "중급 선택, 실행 성공", "난이도 테스트", MB_OK);
+						game_status = DETERMINED;
 					}
 					else
 					{
@@ -105,6 +113,7 @@ LRESULT CALLBACK WndProc(HWND hWnd, UINT uMsg, WPARAM wParam, LPARAM lParam)
 					if (MemLocation != NULL)
 					{
 						MessageBox(hWnd, "상급 선택, 실행 성공", "난이도 테스트", MB_OK);
+						game_status = DETERMINED;
 					}
 					else
 					{

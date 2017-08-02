@@ -139,12 +139,27 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="select.cpp" />
     <ClCompile Include="WinMain.cpp" />
     <ClCompile Include="makeMine.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="base.h" />
     <ClInclude Include="struct.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="C:\Users\한국은행\Desktop\지뢰찾기 이미지\mine_1.png" />
+    <Image Include="C:\Users\한국은행\Desktop\지뢰찾기 이미지\mine_2.png" />
+    <Image Include="C:\Users\한국은행\Desktop\지뢰찾기 이미지\mine_3.png" />
+    <Image Include="C:\Users\한국은행\Desktop\지뢰찾기 이미지\mine_4.png" />
+    <Image Include="C:\Users\한국은행\Desktop\지뢰찾기 이미지\mine_5.png" />
+    <Image Include="C:\Users\한국은행\Desktop\지뢰찾기 이미지\mine_6.png" />
+    <Image Include="C:\Users\한국은행\Desktop\지뢰찾기 이미지\mine_7.png" />
+    <Image Include="C:\Users\한국은행\Desktop\지뢰찾기 이미지\mine_8.png" />
+    <Image Include="C:\Users\한국은행\Desktop\지뢰찾기 이미지\mine_close.png" />
+    <Image Include="C:\Users\한국은행\Desktop\지뢰찾기 이미지\mine_selected.png" />
+    <Image Include="C:\Users\한국은행\Desktop\지뢰찾기 이미지\mine_boom.png" />
+    <Image Include="C:\Users\한국은행\Desktop\지뢰찾기 이미지\mine_0.png" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

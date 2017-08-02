@@ -21,6 +21,9 @@
     <ClCompile Include="makeMine.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
+    <ClCompile Include="select.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="base.h">
@@ -29,5 +32,43 @@
     <ClInclude Include="struct.h">
       <Filter>헤더 파일</Filter>
     </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="C:\Users\한국은행\Desktop\지뢰찾기 이미지\mine_1.png">
+      <Filter>리소스 파일</Filter>
+    </Image>
+    <Image Include="C:\Users\한국은행\Desktop\지뢰찾기 이미지\mine_2.png">
+      <Filter>리소스 파일</Filter>
+    </Image>
+    <Image Include="C:\Users\한국은행\Desktop\지뢰찾기 이미지\mine_3.png">
+      <Filter>리소스 파일</Filter>
+    </Image>
+    <Image Include="C:\Users\한국은행\Desktop\지뢰찾기 이미지\mine_4.png">
+      <Filter>리소스 파일</Filter>
+    </Image>
+    <Image Include="C:\Users\한국은행\Desktop\지뢰찾기 이미지\mine_5.png">
+      <Filter>리소스 파일</Filter>
+    </Image>
+    <Image Include="C:\Users\한국은행\Desktop\지뢰찾기 이미지\mine_6.png">
+      <Filter>리소스 파일</Filter>
+    </Image>
+    <Image Include="C:\Users\한국은행\Desktop\지뢰찾기 이미지\mine_7.png">
+      <Filter>리소스 파일</Filter>
+    </Image>
+    <Image Include="C:\Users\한국은행\Desktop\지뢰찾기 이미지\mine_8.png">
+      <Filter>리소스 파일</Filter>
+    </Image>
+    <Image Include="C:\Users\한국은행\Desktop\지뢰찾기 이미지\mine_close.png">
+      <Filter>리소스 파일</Filter>
+    </Image>
+    <Image Include="C:\Users\한국은행\Desktop\지뢰찾기 이미지\mine_selected.png">
+      <Filter>리소스 파일</Filter>
+    </Image>
+    <Image Include="C:\Users\한국은행\Desktop\지뢰찾기 이미지\mine_0.png">
+      <Filter>리소스 파일</Filter>
+    </Image>
+    <Image Include="C:\Users\한국은행\Desktop\지뢰찾기 이미지\mine_boom.png">
+      <Filter>리소스 파일</Filter>
+    </Image>
   </ItemGroup>
 </Project>
