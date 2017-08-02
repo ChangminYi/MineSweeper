@@ -1,4 +1,7 @@
 #include <Windows.h>
+#include "base.h"
+
+mine** MemLocation = NULL;
 
 HINSTANCE g_hInst;
 LRESULT CALLBACK WndProc(HWND, UINT, WPARAM, LPARAM);
@@ -61,9 +64,9 @@ LRESULT CALLBACK WndProc(HWND hWnd, UINT uMsg, WPARAM wParam, LPARAM lParam)
 	{
 		case WM_CREATE:
 		{
-			CreateWindow("button", "초급", WS_CHILD | WS_VISIBLE | BS_DEFPUSHBUTTON, 50, 50, 200, 30, hWnd, (HMENU)1, g_hInst, NULL);
-			CreateWindow("button", "중급", WS_CHILD | WS_VISIBLE | BS_DEFPUSHBUTTON, 50, 100, 200, 30, hWnd, (HMENU)2, g_hInst, NULL);
-			CreateWindow("button", "상급", WS_CHILD | WS_VISIBLE | BS_DEFPUSHBUTTON, 50, 150, 200, 30, hWnd, (HMENU)3, g_hInst, NULL);
+			CreateWindow("button", "초급", WS_CHILD | WS_VISIBLE | BS_DEFPUSHBUTTON, 20, 20, 100, 30, hWnd, (HMENU)1, g_hInst, NULL);
+			CreateWindow("button", "중급", WS_CHILD | WS_VISIBLE | BS_DEFPUSHBUTTON, 20, 70, 100, 30, hWnd, (HMENU)2, g_hInst, NULL);
+			CreateWindow("button", "상급", WS_CHILD | WS_VISIBLE | BS_DEFPUSHBUTTON, 20, 120, 100, 30, hWnd, (HMENU)3, g_hInst, NULL);
 			break;
 		}
 		case WM_COMMAND:
@@ -72,17 +75,41 @@ LRESULT CALLBACK WndProc(HWND hWnd, UINT uMsg, WPARAM wParam, LPARAM lParam)
 			{
 				case 1:
 				{
-					MessageBox(hWnd, "초급 선택", "난이도", MB_OK);
+					MemLocation = makeMine(1);
+					if (MemLocation != NULL)
+					{
+						MessageBox(hWnd, "초급 선택, 실행 성공", "난이도 테스트", MB_OK);
+					}
+					else
+					{
+						MessageBox(hWnd, "초급 선택, 에러", "난이도 테스트", MB_OK);
+					}
 					break;
 				}
 				case 2:
 				{
-					MessageBox(hWnd, "중급 선택", "난이도", MB_OK);
+					MemLocation = makeMine(2);
+					if (MemLocation != NULL)
+					{
+						MessageBox(hWnd, "중급 선택, 실행 성공", "난이도 테스트", MB_OK);
+					}
+					else
+					{
+						MessageBox(hWnd, "중급 선택, 에러", "난이도 테스트", MB_OK);
+					}
 					break;
 				}
 				case 3:
 				{
-					MessageBox(hWnd, "상급 선택", "난이도", MB_OK);
+					MemLocation = makeMine(3);
+					if (MemLocation != NULL)
+					{
+						MessageBox(hWnd, "상급 선택, 실행 성공", "난이도 테스트", MB_OK);
+					}
+					else
+					{
+						MessageBox(hWnd, "상급 선택, 에러", "난이도 테스트", MB_OK);
+					}
 					break;
 				}
 			}
