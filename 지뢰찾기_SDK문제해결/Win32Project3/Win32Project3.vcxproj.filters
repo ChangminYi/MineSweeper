@@ -1,0 +1,115 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="소스 파일">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="헤더 파일">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    </Filter>
+    <Filter Include="리소스 파일">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="C:\Users\한국은행\Desktop\FindMine - 수정본\FindMine - 수정본 - 복사본\FindMine\FindMine.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="C:\Users\한국은행\Desktop\FindMine - 수정본\FindMine - 수정본 - 복사본\FindMine\0.bmp">
+      <Filter>리소스 파일</Filter>
+    </Image>
+    <Image Include="C:\Users\한국은행\Desktop\FindMine - 수정본\FindMine - 수정본 - 복사본\FindMine\1.bmp">
+      <Filter>리소스 파일</Filter>
+    </Image>
+    <Image Include="C:\Users\한국은행\Desktop\FindMine - 수정본\FindMine - 수정본 - 복사본\FindMine\2.bmp">
+      <Filter>리소스 파일</Filter>
+    </Image>
+    <Image Include="C:\Users\한국은행\Desktop\FindMine - 수정본\FindMine - 수정본 - 복사본\FindMine\3.bmp">
+      <Filter>리소스 파일</Filter>
+    </Image>
+    <Image Include="C:\Users\한국은행\Desktop\FindMine - 수정본\FindMine - 수정본 - 복사본\FindMine\4.bmp">
+      <Filter>리소스 파일</Filter>
+    </Image>
+    <Image Include="C:\Users\한국은행\Desktop\FindMine - 수정본\FindMine - 수정본 - 복사본\FindMine\5.bmp">
+      <Filter>리소스 파일</Filter>
+    </Image>
+    <Image Include="C:\Users\한국은행\Desktop\FindMine - 수정본\FindMine - 수정본 - 복사본\FindMine\6.bmp">
+      <Filter>리소스 파일</Filter>
+    </Image>
+    <Image Include="C:\Users\한국은행\Desktop\FindMine - 수정본\FindMine - 수정본 - 복사본\FindMine\7.bmp">
+      <Filter>리소스 파일</Filter>
+    </Image>
+    <Image Include="C:\Users\한국은행\Desktop\FindMine - 수정본\FindMine - 수정본 - 복사본\FindMine\8.bmp">
+      <Filter>리소스 파일</Filter>
+    </Image>
+    <Image Include="C:\Users\한국은행\Desktop\FindMine - 수정본\FindMine - 수정본 - 복사본\FindMine\9.bmp">
+      <Filter>리소스 파일</Filter>
+    </Image>
+    <Image Include="C:\Users\한국은행\Desktop\FindMine - 수정본\FindMine - 수정본 - 복사본\FindMine\bomb_mine.bmp">
+      <Filter>리소스 파일</Filter>
+    </Image>
+    <Image Include="C:\Users\한국은행\Desktop\FindMine - 수정본\FindMine - 수정본 - 복사본\FindMine\bomb_question.bmp">
+      <Filter>리소스 파일</Filter>
+    </Image>
+    <Image Include="C:\Users\한국은행\Desktop\FindMine - 수정본\FindMine - 수정본 - 복사본\FindMine\failFlag.bmp">
+      <Filter>리소스 파일</Filter>
+    </Image>
+    <Image Include="C:\Users\한국은행\Desktop\FindMine - 수정본\FindMine - 수정본 - 복사본\FindMine\mine.bmp">
+      <Filter>리소스 파일</Filter>
+    </Image>
+    <Image Include="C:\Users\한국은행\Desktop\FindMine - 수정본\FindMine - 수정본 - 복사본\FindMine\mine0.bmp">
+      <Filter>리소스 파일</Filter>
+    </Image>
+    <Image Include="C:\Users\한국은행\Desktop\FindMine - 수정본\FindMine - 수정본 - 복사본\FindMine\mine1.bmp">
+      <Filter>리소스 파일</Filter>
+    </Image>
+    <Image Include="C:\Users\한국은행\Desktop\FindMine - 수정본\FindMine - 수정본 - 복사본\FindMine\mine2.bmp">
+      <Filter>리소스 파일</Filter>
+    </Image>
+    <Image Include="C:\Users\한국은행\Desktop\FindMine - 수정본\FindMine - 수정본 - 복사본\FindMine\mine3.bmp">
+      <Filter>리소스 파일</Filter>
+    </Image>
+    <Image Include="C:\Users\한국은행\Desktop\FindMine - 수정본\FindMine - 수정본 - 복사본\FindMine\mine4.bmp">
+      <Filter>리소스 파일</Filter>
+    </Image>
+    <Image Include="C:\Users\한국은행\Desktop\FindMine - 수정본\FindMine - 수정본 - 복사본\FindMine\mine5.bmp">
+      <Filter>리소스 파일</Filter>
+    </Image>
+    <Image Include="C:\Users\한국은행\Desktop\FindMine - 수정본\FindMine - 수정본 - 복사본\FindMine\mine6.bmp">
+      <Filter>리소스 파일</Filter>
+    </Image>
+    <Image Include="C:\Users\한국은행\Desktop\FindMine - 수정본\FindMine - 수정본 - 복사본\FindMine\mine7.bmp">
+      <Filter>리소스 파일</Filter>
+    </Image>
+    <Image Include="C:\Users\한국은행\Desktop\FindMine - 수정본\FindMine - 수정본 - 복사본\FindMine\mine8.bmp">
+      <Filter>리소스 파일</Filter>
+    </Image>
+    <Image Include="C:\Users\한국은행\Desktop\FindMine - 수정본\FindMine - 수정본 - 복사본\FindMine\minus.bmp">
+      <Filter>리소스 파일</Filter>
+    </Image>
+    <Image Include="C:\Users\한국은행\Desktop\FindMine - 수정본\FindMine - 수정본 - 복사본\FindMine\tile_close.bmp">
+      <Filter>리소스 파일</Filter>
+    </Image>
+    <Image Include="C:\Users\한국은행\Desktop\FindMine - 수정본\FindMine - 수정본 - 복사본\FindMine\tile_flag.bmp">
+      <Filter>리소스 파일</Filter>
+    </Image>
+    <Image Include="C:\Users\한국은행\Desktop\FindMine - 수정본\FindMine - 수정본 - 복사본\FindMine\tile_question.bmp">
+      <Filter>리소스 파일</Filter>
+    </Image>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="C:\Users\한국은행\Desktop\FindMine - 수정본\FindMine - 수정본 - 복사본\FindMine\FindMine.rc">
+      <Filter>리소스 파일</Filter>
+    </ResourceCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="C:\Users\한국은행\Desktop\FindMine - 수정본\FindMine - 수정본 - 복사본\FindMine\resource.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>
