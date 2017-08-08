@@ -15,11 +15,6 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="C:\Users\한국은행\Desktop\FindMine - 수정본\FindMine - 수정본 - 복사본\FindMine\FindMine.cpp">
-      <Filter>소스 파일</Filter>
-    </ClCompile>
-  </ItemGroup>
-  <ItemGroup>
     <Image Include="C:\Users\한국은행\Desktop\FindMine - 수정본\FindMine - 수정본 - 복사본\FindMine\0.bmp">
       <Filter>리소스 파일</Filter>
     </Image>
@@ -111,5 +106,13 @@
     <ClInclude Include="C:\Users\한국은행\Desktop\FindMine - 수정본\FindMine - 수정본 - 복사본\FindMine\resource.h">
       <Filter>헤더 파일</Filter>
     </ClInclude>
+    <ClInclude Include="define_macro.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="C:\Users\한국은행\Desktop\FindMine - 수정본\FindMine - 수정본 - 복사본\FindMine\WndMain_WndProc.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>

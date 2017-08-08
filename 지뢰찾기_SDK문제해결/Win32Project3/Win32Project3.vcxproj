@@ -19,7 +19,7 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="C:\Users\한국은행\Desktop\FindMine - 수정본\FindMine - 수정본 - 복사본\FindMine\FindMine.cpp" />
+    <ClCompile Include="C:\Users\한국은행\Desktop\FindMine - 수정본\FindMine - 수정본 - 복사본\FindMine\WndMain_WndProc.cpp" />
   </ItemGroup>
   <ItemGroup>
     <Image Include="C:\Users\한국은행\Desktop\FindMine - 수정본\FindMine - 수정본 - 복사본\FindMine\0.bmp" />
@@ -55,6 +55,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="C:\Users\한국은행\Desktop\FindMine - 수정본\FindMine - 수정본 - 복사본\FindMine\resource.h" />
+    <ClInclude Include="define_macro.h" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>15.0</VCProjectVersion>
